@@ -21,7 +21,7 @@
   local deployment = $.apps.v1.deployment,
 
   distributor_deployment:
-    deployment.new('distributor', 3, [$.distributor_container]) +
+    deployment.new('distributor', 3, [$.distributor_container], podLabels={gossip_ring_member: 'true'}) +
     $.config_hash_mixin +
     $.util.configVolumeMount('loki', '/etc/loki/config') +
     $.util.configVolumeMount('overrides', '/etc/loki/overrides') +
