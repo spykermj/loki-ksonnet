@@ -35,6 +35,8 @@
   } else {},
 
   querier_args+:: if $._config.using_boltdb_shipper then {
+    // Persist index in pvc
+    'boltdb.shipper.active-index-directory': '/data/index',
     // Use PVC for caching
     'boltdb.shipper.cache-location': '/data/boltdb-cache',
   } else {},
