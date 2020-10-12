@@ -7,6 +7,7 @@
   querier_args::
     $._config.commonArgs {
       target: 'querier',
+      'log.level': 'debug',
     },
 
   querier_container::
